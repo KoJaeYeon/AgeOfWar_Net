@@ -75,22 +75,15 @@ public class TCPServer : MonoBehaviour
         while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
         {
             // Translate data bytes to a ASCII string.
-            data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+            data = System.Text.Encoding.UTF8.GetString(bytes, 0, i);
             Debug.Log("Received: " + data);
 
-            // Process the data sent by the client.
-            data = data.ToUpper();
-
-            byte[] msg = System.Text.Encoding.ASCII.GetBytes(data);
+            byte[] msg = System.Text.Encoding.UTF8.GetBytes(data);
 
             // Send back a response.
             foreach (TcpClient allClient in clientList)
             {
-                if (allClient == client)
-                {
-                    Debug.Log("same1");
-                    continue;
-                }
+                if (allClient == client) continue;
                 NetworkStream allStream = allClient.GetStream();
                 allStream.Write(msg, 0, msg.Length);
             }

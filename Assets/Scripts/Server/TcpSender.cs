@@ -105,9 +105,19 @@ public class TcpSender : MonoBehaviour
                     stream.Read(buffer, 0, buffer.Length);
 
                     // 받은 데이터 처리
-                    string receivedMessage = System.Text.Encoding.ASCII.GetString(buffer);
-                    Debug.Log("Received: " + receivedMessage);
-                    chatLog.text += receivedMessage;
+                    string receivedMessage = System.Text.Encoding.UTF8.GetString(buffer);
+
+                    if(receivedMessage.Contains("[소환]"))
+                    {
+                        string[] packets =  receivedMessage.Split('/');
+                        SpawnManager.Instance.Spawn_Troop(int.Parse(packets[1]), TroopType.Friend);
+                    }
+                    else
+                    {
+                        Debug.Log("Received: " + receivedMessage);
+                        chatLog.text += receivedMessage;
+                    }
+
                 }
             }
             catch (Exception e)
