@@ -107,16 +107,7 @@ public class TcpSender : MonoBehaviour
                     // 받은 데이터 처리
                     string receivedMessage = System.Text.Encoding.UTF8.GetString(buffer);
 
-                    if(receivedMessage.Contains("[소환]"))
-                    {
-                        string[] packets =  receivedMessage.Split('/');
-                        SpawnManager.Instance.Spawn_Troop(int.Parse(packets[1]), TroopType.Friend);
-                    }
-                    else
-                    {
-                        Debug.Log("Received: " + receivedMessage);
-                        chatLog.text += receivedMessage;
-                    }
+                    ClassifyPacket(receivedMessage);
 
                 }
             }
@@ -129,6 +120,21 @@ public class TcpSender : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
+
+    private void ClassifyPacket(string receivedMessage)
+    {
+        if (receivedMessage.Contains("[소환]"))
+        {
+            string[] packets = receivedMessage.Split('/');
+            SpawnManager.Instance.Spawn_Troop(int.Parse(packets[1]), TroopType.Enemy);
+        }
+        else
+        {
+            Debug.Log("Received: " + receivedMessage);
+            chatLog.text += receivedMessage;
+        }
+    }
+
 
     void OnDestroy()
     {

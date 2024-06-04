@@ -10,6 +10,7 @@ public enum TroopType
 public class SpawnManager : Singleton<SpawnManager>
 {
     [SerializeField] Transform friendSpawnPos;
+    [SerializeField] Transform enemySpawnPos;
 
     public void OnClick_FriendSpawn(int id)
     {
@@ -17,8 +18,20 @@ public class SpawnManager : Singleton<SpawnManager>
     }
     public void Spawn_Troop(int id, TroopType troopType)
     {
-        GameObject troop = PoolManager.Instance.Get_Troop(0);
+        GameObject troop = PoolManager.Instance.Get_Troop(id);
         troop.SetActive(true);
-        troop.transform.position = friendSpawnPos.position;
+        Troop troopComp = troop.GetComponent<Troop>();
+        if (troopType == TroopType.Friend)
+        {
+            troop.transform.position = friendSpawnPos.position;
+            troopComp.OnTroopSetFriend(true);
+        }
+        else
+        {
+            troop.transform.position = enemySpawnPos.position;
+            troopComp.OnTroopSetFriend(false);
+        }
+
+        
     }
 }
