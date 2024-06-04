@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Troop : MonoBehaviour
 {
+    [SerializeField] int id;
     [SerializeField] float hp;
     [SerializeField] float attack;
 

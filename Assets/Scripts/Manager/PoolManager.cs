@@ -15,12 +15,14 @@ public class PoolManager : Singleton<PoolManager>
         int index = 0;
         foreach (GameObject troopPrefab in m_TroopsPrefabs)
         {
+            pool_Troops[index] = new Stack<GameObject>();
             for(int i = 0; i < 100; i++)
             {
                 GameObject prefab = Instantiate(troopPrefab, m_poolTrans);
                 pool_Troops[index].Push(prefab);
                 prefab.SetActive(false);
             }
+            index++;
         }
     }
 
