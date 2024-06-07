@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class Troop : MonoBehaviour
 {
     [SerializeField] int id;
+    [SerializeField] int gold;
+    [SerializeField] int dieGold;
     [SerializeField] int hp;
     [SerializeField] int attack;
     [SerializeField] float moveSpeed = 1;
@@ -28,6 +30,15 @@ public abstract class Troop : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.right * moveSpeed * attackDir * Time.deltaTime);
+    }
+
+    public void OnSetInitData(TroopData troopData)
+    {
+        gold = troopData.Gold;
+        dieGold = troopData.DieGold;
+        hp = troopData.Hp;
+        attack = troopData.Attack;
+
     }
 
     [SerializeField]

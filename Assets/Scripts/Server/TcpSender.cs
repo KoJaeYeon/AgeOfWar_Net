@@ -15,15 +15,10 @@ public class TcpSender : Singleton<TcpSender>
     bool isConnected = false;
 
     private void Start()
-    {
-        ConnectToDB();
-        //ConnectToServer();
+    {        
+        ConnectToServer();
     }
 
-    public void ConnectToDB()
-    {
-
-    }
 
     public void ConnectToServer()
     {

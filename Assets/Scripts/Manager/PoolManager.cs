@@ -8,7 +8,7 @@ public class PoolManager : Singleton<PoolManager>
     [SerializeField] GameObject[] m_TroopsPrefabs;
     Queue<GameObject>[] pool_Troops;
 
-    private void Awake()
+    private void Start()
     {
         pool_Troops = new Queue<GameObject>[m_TroopsPrefabs.Length];
 

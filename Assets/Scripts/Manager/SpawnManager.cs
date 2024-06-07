@@ -79,6 +79,7 @@ public class SpawnManager : Singleton<SpawnManager>
         GameObject troop = PoolManager.Instance.Get_Troop(id);
         troop.SetActive(true);
         Troop troopComp = troop.GetComponent<Troop>();
+        troopComp.OnSetInitData(DatabaseManager.Instance.GetTroopData(id));
         troopComp.OnSetMoveStop();
         troopComp.SetSpawnIndex(spawnIndex++);
         if (troopType == TroopType.Friend)
