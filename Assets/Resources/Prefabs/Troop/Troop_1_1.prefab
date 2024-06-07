@@ -104,6 +104,7 @@ MonoBehaviour:
   hp: 50
   attack: 20
   moveSpeed: 1
+  gold: 15
 --- !u!61 &2277316116147518377
 BoxCollider2D:
   m_ObjectHideFlags: 0

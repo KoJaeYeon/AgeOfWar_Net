@@ -171,7 +171,7 @@ TextureImporter:
       name: Troop_Icon_1_3
       rect:
         serializedVersion: 2
-        x: 171
+        x: 126
         y: 2
         width: 34
         height: 34
@@ -184,6 +184,27 @@ TextureImporter:
       bones: []
       spriteID: 4c08e9535179f0d468ee75508f879dfd
       internalID: -1121267945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troop_Icon_1_4
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 2
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67530ea9037e88438f110870977ace2
+      internalID: -992785684
       vertices: []
       indices: 
       edges: []
@@ -203,6 +224,7 @@ TextureImporter:
       Troop_Icon_1_1: 494657517
       Troop_Icon_1_2: -2062314477
       Troop_Icon_1_3: -1121267945
+      Troop_Icon_1_4: -992785684
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

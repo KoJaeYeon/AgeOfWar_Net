@@ -15,7 +15,14 @@ public class SpawnManager : Singleton<SpawnManager>
     Queue<Troop> distanceQueue_Friend = new Queue<Troop>();
     Queue<Troop> distanceQueue_Enemy = new Queue<Troop>();
 
+    Dictionary<int, int> NeedSpawnGold = new Dictionary<int, int>();
+
     int spawnIndex = 0;
+
+    private void Awake()
+    {
+        NeedSpawnGold.Add(0, 15);
+    }
     private void Update()
     {
         if(distanceQueue_Friend.Count > 0)
@@ -51,8 +58,7 @@ public class SpawnManager : Singleton<SpawnManager>
 
     public void OnClick_FriendSpawn(int id)
     {
-        Spawn_Troop(id, TroopType.Friend);
-        TcpSender.Instance.SendMsg($"[社発]/{id}");
+        Spawn_Troop(id, TroopType.Friend);        
     }
 
     public void OnClick_EnemySpawn(int id)
@@ -62,6 +68,14 @@ public class SpawnManager : Singleton<SpawnManager>
 
     public void Spawn_Troop(int id, TroopType troopType)
     {
+        if(troopType == TroopType.Friend)
+        {
+            if(!GameManager.Instance.OnSpawnGoldCheck(NeedSpawnGold[id]))
+            {
+                return;
+            }
+        }
+
         GameObject troop = PoolManager.Instance.Get_Troop(id);
         troop.SetActive(true);
         Troop troopComp = troop.GetComponent<Troop>();
@@ -72,6 +86,7 @@ public class SpawnManager : Singleton<SpawnManager>
             troop.transform.position = friendSpawnPos.position;
             troopComp.OnTroopSetFriend(true);
             distanceQueue_Friend.Enqueue(troopComp);
+            TcpSender.Instance.SendMsg($"[社発]/{id}");
         }
         else
         {

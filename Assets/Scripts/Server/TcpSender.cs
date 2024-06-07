@@ -16,8 +16,15 @@ public class TcpSender : Singleton<TcpSender>
 
     private void Start()
     {
-        ConnectToServer();
+        ConnectToDB();
+        //ConnectToServer();
     }
+
+    public void ConnectToDB()
+    {
+
+    }
+
     public void ConnectToServer()
     {
         if (isConnected) { return; }

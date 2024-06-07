@@ -13,7 +13,6 @@ public abstract class Troop : MonoBehaviour
 
     Troop EnemyTroop;
 
-    bool friend = true;
     float attackDir = 1;
 
     int spawnIndex = 0;

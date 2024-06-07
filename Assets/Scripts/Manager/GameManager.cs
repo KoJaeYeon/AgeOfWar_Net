@@ -18,6 +18,16 @@ public class GameManager : Singleton<GameManager>
         StartCoroutine(Earn_Gold());
     }
 
+    public bool OnSpawnGoldCheck(int gold)
+    {
+        if(this.gold >= gold)
+        {
+            this.gold -= gold;
+            return true;
+        }
+        else return false;
+    }
+
     IEnumerator Earn_Gold()
     {
         while (true)
