@@ -44,6 +44,8 @@ public class DatabaseManager : Singleton<DatabaseManager>
 
     private void Awake()
     {
+        if (Instance != this && Instance != null) Destroy(this.gameObject);
+        DontDestroyOnLoad(this.gameObject);
         ConnectToDB();
     }
 

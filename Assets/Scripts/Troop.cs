@@ -110,10 +110,13 @@ public abstract class Troop : MonoBehaviour
         if (collision.tag.Equals(tag))
         {
             Troop troop = collision.GetComponent<Troop>();
-            if(troop.spawnIndex < spawnIndex)
+            if(troop != null)
             {
-                OnSetMoveStop();
-            }            
+                if (troop.spawnIndex < spawnIndex)
+                {
+                    OnSetMoveStop();
+                }
+            }          
         }
         else
         {
@@ -133,9 +136,12 @@ public abstract class Troop : MonoBehaviour
         if (collision.tag.Equals(tag))
         {
             Troop troop = collision.GetComponent<Troop>();
-            if (troop.spawnIndex < spawnIndex)
+            if (troop != null)
             {
-                OnSetMoveStart();
+                if (troop.spawnIndex < spawnIndex)
+                {
+                    OnSetMoveStart();
+                }
             }
         }
         else

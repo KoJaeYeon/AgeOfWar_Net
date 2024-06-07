@@ -3,20 +3,27 @@ using System.Collections;
 using System.Net.Sockets;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TcpSender : Singleton<TcpSender>
 {
     TcpClient client;
     NetworkStream stream;
-    [SerializeField] TextMeshProUGUI chatLog;
-    [SerializeField] TMP_InputField inputField;
+    public ChattingPanel chattingPanel;
     string server = "127.0.0.1";
     int port = 13000;
     bool isConnected = false;
 
+    private void Awake()
+    {
+        if (Instance != this) Destroy(this.gameObject);
+        DontDestroyOnLoad(this.gameObject);
+    }
     private void Start()
     {        
         ConnectToServer();
+
+        SceneManager.LoadScene("SampleScene");
     }
 
 
@@ -36,16 +43,6 @@ public class TcpSender : Singleton<TcpSender>
         {
             Debug.LogError("Failed to connect to server: " + e.Message);
         }
-    }
-
-    public void OnClick_SendMsg()
-    {
-        string msg = inputField.text;
-        if (string.IsNullOrWhiteSpace(msg))
-        {
-            msg = "null";
-        }
-        SendMsg(msg);
     }
 
     public void SendMsg(String message)
@@ -119,7 +116,7 @@ public class TcpSender : Singleton<TcpSender>
         else
         {
             Debug.Log("Received: " + receivedMessage);
-            chatLog.text += receivedMessage;
+            chattingPanel.OnChatLogWrite(receivedMessage);
         }
     }
 

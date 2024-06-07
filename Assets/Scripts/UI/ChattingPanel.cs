@@ -7,6 +7,11 @@ public class ChattingPanel : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI ChatLog;
     [SerializeField] TMP_InputField ChatInputField;
+
+    private void Awake()
+    {
+        TcpSender.Instance.chattingPanel = this;
+    }
     public void OnChatLogWrite(string msg)
     {
         ChatLog.text += msg;
