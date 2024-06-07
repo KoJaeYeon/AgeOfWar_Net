@@ -18,6 +18,12 @@ public class GameManager : Singleton<GameManager>
         StartCoroutine(Earn_Gold());
     }
 
+    public void EarnGold(int dieGold)
+    {
+        gold += dieGold;
+        DataPanel.OnChange_GoldText(gold);
+    }
+
     public bool OnSpawnGoldCheck(int gold)
     {
         if(this.gold >= gold)

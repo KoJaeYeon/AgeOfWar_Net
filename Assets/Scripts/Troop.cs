@@ -69,8 +69,12 @@ public abstract class Troop : MonoBehaviour
     public void OnDamaged(int damage)
     {
         hp-= damage;
-        if(hp <= 0)
+        if (hp <= 0)
         {
+            if (tag=="Enemy")
+            {
+                GameManager.Instance.EarnGold(dieGold);
+            }
             StartCoroutine(DieDelay());
         }
     }
