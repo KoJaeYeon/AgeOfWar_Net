@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7097765360839960667}
   - component: {fileID: 2277316116147518377}
   - component: {fileID: 5906666200834708390}
+  - component: {fileID: 3272908378247119745}
   m_Layer: 0
   m_Name: Troop_1_1
   m_TagString: Untagged
@@ -100,8 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  hp: 0
-  attack: 0
+  hp: 50
+  attack: 20
+  moveSpeed: 1
 --- !u!61 &2277316116147518377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +151,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &3272908378247119745
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7049325142805434563}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16e2b4397005fed4fb2aa992568aa6ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

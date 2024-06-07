@@ -1,0 +1,497 @@
+fileFormatVersion: 2
+guid: eb8cee405c6387b4eaa9c606e9fc733e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 525
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Trrop1Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 531
+        width: 166
+        height: 213
+      alignment: 9
+      pivot: {x: 0.3493975, y: 0.6047948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cb1ab75c0703241a655ffa53cc3506
+      internalID: -199945630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 530
+        width: 147
+        height: 213
+      alignment: 9
+      pivot: {x: 0.2934888, y: 0.59221953}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a8be7cb8225e74986e0701c00a403b
+      internalID: 1233695280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 532
+        width: 132
+        height: 207
+      alignment: 9
+      pivot: {x: 0.18208821, y: 0.60351914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c77c64405a791f42aa2fdb30f12b971
+      internalID: -1989286161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 535
+        width: 144
+        height: 204
+      alignment: 9
+      pivot: {x: 0.2581838, y: 0.596288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94d8fc44fadde54eb3d5277a936d0a2
+      internalID: -1960316879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 535
+        width: 157
+        height: 204
+      alignment: 9
+      pivot: {x: 0.32370287, y: 0.59191114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064dab5d951bed7498afaf45d2ad6ce4
+      internalID: -1688943023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 544
+        width: 144
+        height: 204
+      alignment: 9
+      pivot: {x: 0.2457835, y: 0.59191114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c311f671937cf454189b289024e90200
+      internalID: -2135300942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 550
+        width: 132
+        height: 207
+      alignment: 9
+      pivot: {x: 0.18208729, y: 0.59489256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dea524c5a124f2429c8fd23940c5dbc
+      internalID: 334040960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 550
+        width: 147
+        height: 213
+      alignment: 9
+      pivot: {x: 0.26919246, y: 0.60898674}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeab8ee76a1fb7f4d91c24794ec2fcf7
+      internalID: -284463951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 257
+        width: 135
+        height: 207
+      alignment: 9
+      pivot: {x: 0.20238091, y: 0.6078326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2609d8b102be9d84fa22c808498eb377
+      internalID: 242379149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 263
+        width: 172
+        height: 207
+      alignment: 9
+      pivot: {x: 0.14181864, y: 0.60351944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644776daefdb16745b1606bc6d990d2b
+      internalID: -373003497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 269
+        width: 185
+        height: 207
+      alignment: 9
+      pivot: {x: 0.14768298, y: 0.59489274}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37533e33b2feba4da5c0976d8ee99ef
+      internalID: -413077426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 264
+        width: 163
+        height: 241
+      alignment: 9
+      pivot: {x: 0.17133991, y: 0.51111424}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484ee8917908ed64d9dfcf2376af3176
+      internalID: 1596701557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 243
+        width: 119
+        height: 279
+      alignment: 9
+      pivot: {x: 0.2373929, y: 0.44239604}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c459a3c49abb44e991515abc1b4f57
+      internalID: 415251827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 250
+        width: 163
+        height: 241
+      alignment: 9
+      pivot: {x: 0.18229516, y: 0.5037048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ac42e10d39a7145835813071e10ed9
+      internalID: 2077864511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 0
+        width: 185
+        height: 207
+      alignment: 9
+      pivot: {x: 0.13803084, y: 0.5992062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ca131a52c2d6b4ea90b295a27e12e0
+      internalID: 748195458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 0
+        width: 172
+        height: 207
+      alignment: 9
+      pivot: {x: 0.15739192, y: 0.5948929}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a2443de918c8847a04d00a090dabe0
+      internalID: -892689773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Trrop1Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 6
+        width: 135
+        height: 207
+      alignment: 9
+      pivot: {x: 0.20899431, y: 0.6035197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec23aff9cea883d4cb6a90054d8a2aae
+      internalID: -1135957694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Trrop1Atlas_0: -199945630
+      Trrop1Atlas_1: 1233695280
+      Trrop1Atlas_10: -413077426
+      Trrop1Atlas_11: 1596701557
+      Trrop1Atlas_12: 415251827
+      Trrop1Atlas_13: 2077864511
+      Trrop1Atlas_14: 748195458
+      Trrop1Atlas_15: -892689773
+      Trrop1Atlas_16: -1135957694
+      Trrop1Atlas_2: -1989286161
+      Trrop1Atlas_3: -1960316879
+      Trrop1Atlas_4: -1688943023
+      Trrop1Atlas_5: -2135300942
+      Trrop1Atlas_6: 334040960
+      Trrop1Atlas_7: -284463951
+      Trrop1Atlas_8: 242379149
+      Trrop1Atlas_9: -373003497
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

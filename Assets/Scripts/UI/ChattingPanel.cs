@@ -24,6 +24,6 @@ public class ChattingPanel : MonoBehaviour
         Debug.Log(msg);
         OnChatLogWrite($"<color=red>나</color> : {msg}\n");
 
-        //[TODO] 채팅메시지 네트워크로 보내야 함
+        TcpSender.Instance.SendMsg(msg);
     }
 }

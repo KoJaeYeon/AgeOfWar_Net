@@ -52,6 +52,7 @@ public class SpawnManager : Singleton<SpawnManager>
     public void OnClick_FriendSpawn(int id)
     {
         Spawn_Troop(id, TroopType.Friend);
+        TcpSender.Instance.SendMsg($"[º“»Ø]/{id}");
     }
 
     public void OnClick_EnemySpawn(int id)

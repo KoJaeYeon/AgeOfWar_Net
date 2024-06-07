@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using TMPro;
 using UnityEngine;
 
-public class TcpSender : MonoBehaviour
+public class TcpSender : Singleton<TcpSender>
 {
     TcpClient client;
     NetworkStream stream;
@@ -46,7 +46,7 @@ public class TcpSender : MonoBehaviour
         SendMsg(msg);
     }
 
-    private void SendMsg(String message)
+    public void SendMsg(String message)
     {
         try
         {
@@ -56,7 +56,7 @@ public class TcpSender : MonoBehaviour
                 return;
             }
             // Translate the passed message into ASCII and store it as a Byte array.
-            Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
+            Byte[] data = System.Text.Encoding.UTF8.GetBytes(message);
 
             // Get a client stream for reading and writing.
             stream = client.GetStream();
@@ -65,20 +65,6 @@ public class TcpSender : MonoBehaviour
             stream.Write(data, 0, data.Length);
 
             Console.WriteLine("Sent: {0}", message);
-
-            // Receive the server response.
-
-            // Buffer to store the response bytes.
-            data = new Byte[256];
-
-            // String to store the response ASCII representation.
-            String responseData = String.Empty;
-
-            // Read the first batch of the TcpServer response bytes.
-            Int32 bytes = stream.Read(data, 0, data.Length);
-            responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-            Debug.Log($"Received: {responseData}");
-            chatLog.text += responseData;
         }
         catch (ArgumentNullException e)
         {
