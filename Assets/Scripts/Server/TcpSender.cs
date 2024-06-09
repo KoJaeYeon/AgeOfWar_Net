@@ -10,22 +10,18 @@ public class TcpSender : Singleton<TcpSender>
     TcpClient client;
     NetworkStream stream;
     public ChattingPanel chattingPanel;
-    string server = "127.0.0.1";
+    [SerializeField] string server = "127.0.0.1";
     int port = 13000;
     bool isConnected = false;
+
+    string myName = string.Empty;
+    string enemyPlayerName = string.Empty;
 
     private void Awake()
     {
         if (Instance != this) Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
     }
-    private void Start()
-    {        
-        ConnectToServer();
-
-        SceneManager.LoadScene("SampleScene");
-    }
-
 
     public void ConnectToServer()
     {
@@ -45,6 +41,26 @@ public class TcpSender : Singleton<TcpSender>
         }
     }
 
+    public void OnSetMyName(string myName)
+    {
+        this.myName = myName;
+    }
+
+    public void OnSetEnemyName(string enemyName)
+    {
+        enemyPlayerName = enemyName;
+    }
+
+    public string GetMyName()
+    {
+        return myName;
+    }
+
+    public void SendMyName()
+    {
+        SendMsg($"[상대]/{myName}#");
+    }
+
     public void SendMsg(String message)
     {
         try
@@ -55,7 +71,7 @@ public class TcpSender : Singleton<TcpSender>
                 return;
             }
             // Translate the passed message into ASCII and store it as a Byte array.
-            Byte[] data = System.Text.Encoding.UTF8.GetBytes(message);
+            Byte[] data = System.Text.Encoding.UTF8.GetBytes($"{message}#");
 
             // Get a client stream for reading and writing.
             stream = client.GetStream();
@@ -92,7 +108,12 @@ public class TcpSender : Singleton<TcpSender>
                     // 받은 데이터 처리
                     string receivedMessage = System.Text.Encoding.UTF8.GetString(buffer);
 
-                    ClassifyPacket(receivedMessage);
+                    string[] packets = receivedMessage.Split("#");
+                    foreach (string packet in packets)
+                    {
+                        ClassifyPacket(packet);
+                    }
+                    
 
                 }
             }
@@ -113,10 +134,20 @@ public class TcpSender : Singleton<TcpSender>
             string[] packets = receivedMessage.Split('/');
             SpawnManager.Instance.Spawn_Troop(int.Parse(packets[1]), TroopType.Enemy);
         }
+        else if(receivedMessage.Contains("[시작]"))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+        else if(receivedMessage.Contains("[상대]"))
+        {
+            string[] packets = receivedMessage.Split('/');
+            OnSetEnemyName(packets[1]);
+        }
         else
         {
             Debug.Log("Received: " + receivedMessage);
-            chattingPanel.OnChatLogWrite(receivedMessage);
+            if (string.IsNullOrWhiteSpace(receivedMessage)) return;
+            chattingPanel.OnChatLogWrite($"<color=blue>{enemyPlayerName}</color> : {receivedMessage}\n");
         }
     }
 

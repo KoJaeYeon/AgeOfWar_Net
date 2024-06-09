@@ -15,6 +15,8 @@ public class TCPServer : MonoBehaviour
     TcpListener server;
     bool isServerRunning = true;
 
+    Dictionary<TcpClient, string> playerName = new Dictionary<TcpClient, string>();
+
     private void Start()
     {
         Debug.Log("ServerStart");
@@ -87,8 +89,12 @@ public class TCPServer : MonoBehaviour
             data = System.Text.Encoding.UTF8.GetString(bytes, 0, i);
             Debug.Log("Received: " + data);
 
-            byte[] msg = System.Text.Encoding.UTF8.GetBytes(data);
+            if(data.Contains("[¿Ã∏ß]"))
+            {
+                playerName.Add(client, data.Split("#")[1]);
+            }
 
+            byte[] msg = System.Text.Encoding.UTF8.GetBytes(data);
 
             NetworkStream enemyStream = keyValuePairs[client].GetStream();
             enemyStream.Write(msg, 0, msg.Length);

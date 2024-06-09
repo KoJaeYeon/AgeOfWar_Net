@@ -15,6 +15,7 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
+        TcpSender.Instance.SendMyName();
         StartCoroutine(Earn_Gold());
     }
 
