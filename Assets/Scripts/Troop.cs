@@ -14,6 +14,7 @@ public abstract class Troop : MonoBehaviour
     Animator animator;
 
     Troop EnemyTroop;
+    BaseCave EnemyBase;
 
     float attackDir = 1;
 
@@ -47,6 +48,10 @@ public abstract class Troop : MonoBehaviour
         if (EnemyTroop != null)
         {
             EnemyTroop.OnDamaged(attack);
+        }
+        else if(EnemyBase != null)
+        {
+            EnemyBase.OnDamaged(attack);
         }
     }
 
@@ -110,7 +115,7 @@ public abstract class Troop : MonoBehaviour
         if (collision.tag.Equals(tag))
         {
             Troop troop = collision.GetComponent<Troop>();
-            if(troop != null)
+            if(troop != null) //null = Base
             {
                 if (troop.spawnIndex < spawnIndex)
                 {
@@ -118,14 +123,24 @@ public abstract class Troop : MonoBehaviour
                 }
             }          
         }
-        else
+        else //enemy
         {
             Troop troop = collision.GetComponent<Troop>();
-            if(troop != null) // Enemy
+            if(troop != null) // Enemy Troop
             {
                 EnemyTroop = troop;
                 animator.SetBool("Attack", true);
                 OnSetMoveStop();
+            }
+            else
+            {
+                BaseCave baseCase = collision.GetComponent<BaseCave>();
+                if(baseCase != null)
+                {
+                    EnemyTroop = troop;
+                    animator.SetBool("Attack", true);
+                    OnSetMoveStop();
+                }
             }
         }
     }
