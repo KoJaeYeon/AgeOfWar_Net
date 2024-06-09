@@ -11,6 +11,7 @@ public class TCPServer : MonoBehaviour
 {
     Thread tcpListenerThread;
     List<TcpClient> clientList;
+    Dictionary<TcpClient, TcpClient> keyValuePairs = new Dictionary<TcpClient, TcpClient>();
     TcpListener server;
     bool isServerRunning = true;
 
@@ -51,6 +52,14 @@ public class TCPServer : MonoBehaviour
 
                 //Client ÀúÀå
                 clientList.Add(client);
+
+                if (clientList.Count >= 2)
+                {
+                    keyValuePairs.Add(clientList[0], clientList[1]);
+                    keyValuePairs.Add(clientList[1], clientList[0]);
+
+                    clientList.RemoveRange(0, 2);
+                }
             }
         }
         catch (SocketException e)
@@ -80,13 +89,10 @@ public class TCPServer : MonoBehaviour
 
             byte[] msg = System.Text.Encoding.UTF8.GetBytes(data);
 
-            // Send back a response.
-            foreach (TcpClient allClient in clientList)
-            {
-                if (allClient == client) continue;
-                NetworkStream allStream = allClient.GetStream();
-                allStream.Write(msg, 0, msg.Length);
-            }
+
+            NetworkStream enemyStream = keyValuePairs[client].GetStream();
+            enemyStream.Write(msg, 0, msg.Length);
+
             //stream.Write(msg,0, msg.Length);
             Debug.Log("Sent: " + data);
         }
