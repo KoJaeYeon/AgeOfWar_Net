@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChattingPanel : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI ChatLog;
     [SerializeField] TMP_InputField ChatInputField;
+    [SerializeField] Scrollbar Scrollbar;
 
     string myName = string.Empty;
 
@@ -16,10 +18,19 @@ public class ChattingPanel : MonoBehaviour
         myName = TcpSender.Instance.GetMyName();
     }
     public void OnChatLogWrite(string msg)
-    {        
-        ChatLog.text += msg;
+    {
+        StartCoroutine(AppendAndScroll(msg));
     }
 
+    IEnumerator AppendAndScroll(string msg)
+    {
+        ChatLog.text += msg;
+
+        yield return null;
+        yield return null;
+
+        Scrollbar.value = 0;
+    }
     public void OnClick_SendMsg()
     {
         if(string.IsNullOrWhiteSpace(ChatInputField.text))

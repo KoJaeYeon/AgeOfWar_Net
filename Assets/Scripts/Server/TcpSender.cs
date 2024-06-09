@@ -23,9 +23,9 @@ public class TcpSender : Singleton<TcpSender>
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public void ConnectToServer()
+    public bool ConnectToServer()
     {
-        if (isConnected) { return; }
+        if (isConnected) { return false; }
         try
         {
             client = new TcpClient(server, port);
@@ -34,10 +34,12 @@ public class TcpSender : Singleton<TcpSender>
 
             // 수신 스레드 시작
             StartCoroutine(ReceiveData());
+            return true;
         }
         catch (Exception e)
         {
             Debug.LogError("Failed to connect to server: " + e.Message);
+            return false;
         }
     }
 

@@ -767,10 +767,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1669917724}
     m_Modifications:
-    - target: {fileID: 2838972941887047222, guid: 011a4afbc6bb3fd498a65fbe513854a7, type: 3}
-      propertyPath: m_text
-      value: "\uC785\uB825"
-      objectReference: {fileID: 0}
     - target: {fileID: 4635727825506151195, guid: 011a4afbc6bb3fd498a65fbe513854a7, type: 3}
       propertyPath: m_Name
       value: TitleUI
