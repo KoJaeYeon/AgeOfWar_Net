@@ -137,7 +137,7 @@ public abstract class Troop : MonoBehaviour
                 BaseCave baseCase = collision.GetComponent<BaseCave>();
                 if(baseCase != null)
                 {
-                    EnemyTroop = troop;
+                    EnemyBase = baseCase;
                     animator.SetBool("Attack", true);
                     OnSetMoveStop();
                 }

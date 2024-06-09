@@ -10,6 +10,7 @@ public class TcpSender : Singleton<TcpSender>
     TcpClient client;
     NetworkStream stream;
     public ChattingPanel chattingPanel;
+    public TitleUI titleUI;
     [SerializeField] string server = "127.0.0.1";
     int port = 13000;
     bool isConnected = false;
@@ -138,7 +139,7 @@ public class TcpSender : Singleton<TcpSender>
         }
         else if(receivedMessage.Contains("[시작]"))
         {
-            SceneManager.LoadScene("SampleScene");
+            titleUI.LoadScene();
         }
         else if(receivedMessage.Contains("[상대]"))
         {

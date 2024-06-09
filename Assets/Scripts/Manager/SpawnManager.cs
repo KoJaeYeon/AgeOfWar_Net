@@ -11,13 +11,18 @@ public class SpawnManager : Singleton<SpawnManager>
 {
     [SerializeField] Transform friendSpawnPos;
     [SerializeField] Transform enemySpawnPos;
+    [SerializeField] SpawnPanel SpawnPanel;
 
     Queue<Troop> distanceQueue_Friend = new Queue<Troop>();
     Queue<Troop> distanceQueue_Enemy = new Queue<Troop>();
 
     Dictionary<int, int> NeedSpawnGold = new Dictionary<int, int>();
 
+    Queue<int> spawnDelayQueue = new Queue<int>();
+    float spawnTime = 0;
+
     int spawnIndex = 0;
+
 
     private void Awake()
     {
@@ -54,11 +59,34 @@ public class SpawnManager : Singleton<SpawnManager>
                 distanceQueue_Enemy.Dequeue();
             }
         }
+
+        if(spawnDelayQueue.Count > 0)
+        {
+            spawnTime += Time.deltaTime / 3;
+            SpawnPanel.OnChangeSliderValue(spawnTime);
+            if(spawnTime > 1)
+            {
+                spawnTime = 0;
+                SpawnPanel.OnChangeSliderValue(spawnTime);
+                int id = spawnDelayQueue.Dequeue();
+                Spawn_Troop(id, TroopType.Friend);
+                SpawnPanel.TurnOn(spawnDelayQueue.Count);
+            }
+        }
     }
 
-    public void OnClick_FriendSpawn(int id)
+    public void OnCalled_FriendSpawn(int id)
     {
-        Spawn_Troop(id, TroopType.Friend);        
+        if (spawnDelayQueue.Count > 5)
+        {
+            return;
+        }
+        if (!GameManager.Instance.OnSpawnGoldCheck(NeedSpawnGold[id]))
+        {
+            return;
+        }
+        spawnDelayQueue.Enqueue(id);
+        SpawnPanel.TurnOn(spawnDelayQueue.Count);
     }
 
     public void OnClick_EnemySpawn(int id)
@@ -68,14 +96,6 @@ public class SpawnManager : Singleton<SpawnManager>
 
     public void Spawn_Troop(int id, TroopType troopType)
     {
-        if(troopType == TroopType.Friend)
-        {
-            if(!GameManager.Instance.OnSpawnGoldCheck(NeedSpawnGold[id]))
-            {
-                return;
-            }
-        }
-
         GameObject troop = PoolManager.Instance.Get_Troop(id);
         troop.SetActive(true);
         Troop troopComp = troop.GetComponent<Troop>();

@@ -6,6 +6,6 @@ public class MenuPanel : MonoBehaviour
 {
     public void OnClick_SpawnTroop(int id)
     {
-        SpawnManager.Instance.Spawn_Troop(id, TroopType.Friend);
+        SpawnManager.Instance.OnCalled_FriendSpawn(id);
     }
 }
