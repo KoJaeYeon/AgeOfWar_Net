@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chattingPanel: {fileID: 0}
+  server: 127.0.0.1
 --- !u!4 &248564142
 Transform:
   m_ObjectHideFlags: 0
