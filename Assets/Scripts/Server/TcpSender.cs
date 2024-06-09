@@ -11,8 +11,8 @@ public class TcpSender : Singleton<TcpSender>
     NetworkStream stream;
     public ChattingPanel chattingPanel;
     public TitleUI titleUI;
-    [SerializeField] string server = "127.0.0.1";
-    int port = 13000;
+    [SerializeField] string server = "43.203.227.43";
+    int port = 2074;
     bool isConnected = false;
 
     string myName = string.Empty;
