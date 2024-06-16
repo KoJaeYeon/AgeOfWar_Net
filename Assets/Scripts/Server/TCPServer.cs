@@ -45,6 +45,9 @@ public class TCPServer : MonoBehaviour
 
             while (isServerRunning)
             {
+
+                //¹º°¡¸¦ Ãß°¡
+                
                 // Accept the TcpClient connection.
                 TcpClient client = server.AcceptTcpClient();
                 Debug.Log("Connect");
