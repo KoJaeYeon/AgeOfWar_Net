@@ -46,7 +46,8 @@ public class DatabaseManager : Singleton<DatabaseManager>
     {
         if (Instance != this && Instance != null) Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
-        ConnectToDB();
+        troopDataDic.Add(0, new TroopData(15, 20, 100, 20));
+        //ConnectToDB();
     }
 
     public void ConnectToDB()
